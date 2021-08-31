@@ -13,9 +13,10 @@ Apiet är beskrivet via Swagger som ni kan hitta direkt under `<host>/swagger-ui
 
 # Testa
 
-1. `docker-compose up -d` för att starta appen, databasen och rabbit
-2. Gå till swagger och trigga en betalning
-3. kolla i loggarna vad tjänsten skriver ut `docker-compose logs -f payment-gw`
+1. `mvn clean verify && docker build -t payment-gw .` för att bygga och paketera appen
+2. `docker-compose up -d` för att starta appen, databasen och rabbit
+3. Gå till swagger och trigga en betalning
+4. kolla i loggarna vad tjänsten skriver ut `docker-compose logs -f payment-gw`
 
 # Arkitektur
 
