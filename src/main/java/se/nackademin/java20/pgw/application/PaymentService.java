@@ -33,7 +33,7 @@ public class PaymentService {
 
     @Transactional
     public void performPayments() {
-        LOG.info("Creating payment");
+        LOG.info("Checking payments to be performed");
         Duration duration = Duration.ofSeconds(10);
         List<Payment> payments = paymentRepository.finalAllUnpaid()
                 .stream()
