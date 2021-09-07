@@ -8,7 +8,7 @@ services:
     ports:
       - "3306:3306"
   payment-gw:
-    image: payment-gw:0.0.1
+    image: payment-gw
     environment:
       - MYSQL_HOST=mysql
       - SPRING_RABBITMQ_HOST=rabbit
