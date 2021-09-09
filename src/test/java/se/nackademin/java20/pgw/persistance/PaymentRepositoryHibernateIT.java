@@ -29,7 +29,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class PaymentRepositoryHibernateIT {
 
     @Container
-    private static final MySQLContainer db = new MySQLContainer("mysql:8.0.26").withPassword("password");
+    private static final MySQLContainer db = new MySQLContainer("mysql:8.0.26").withPassword("094c8a9d");
 
     @Autowired
     TestEntityManager testEntityManager;
