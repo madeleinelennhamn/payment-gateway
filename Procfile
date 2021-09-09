@@ -1,1 +1,0 @@
-web: java -Dserver.port=53986 $JAVA_OPTS -jar target/payment-gateway-0.0.1-SNAPSHOT.jar
