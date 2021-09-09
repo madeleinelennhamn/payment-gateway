@@ -32,7 +32,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class PGWApplicationTests {
 
     @Container
-    private static final MySQLContainer db = new MySQLContainer("mysql:8.0.26").withPassword("094c8a9d");
+    private static final MySQLContainer db = new MySQLContainer("mysql:8.0.26").withPassword("password");
 
     @Container
     private static RabbitMQContainer rabbit = new RabbitMQContainer("rabbitmq:3.9.5");
