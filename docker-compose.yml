@@ -3,8 +3,8 @@ services:
   mysql:
     image: mysql:8.0.26
     environment:
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=payments
+      - MYSQL_ROOT_PASSWORD=bdd374e44c3bcf
+      - MYSQL_DATABASE=094c8a9d
     ports:
       - "3306:3306"
   payment-gw:
