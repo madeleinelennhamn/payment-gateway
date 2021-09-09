@@ -3,8 +3,8 @@ services:
   mysql:
     image: mysql:8.0.26
     environment:
-      - MYSQL_ROOT_PASSWORD=094c8a9d
-      - MYSQL_DATABASE=heroku_ee1be7d9efa0593
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=payments
     ports:
       - "3306:3306"
   payment-gw:
