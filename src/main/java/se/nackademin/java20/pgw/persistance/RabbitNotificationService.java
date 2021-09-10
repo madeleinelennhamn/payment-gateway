@@ -27,6 +27,7 @@ public class RabbitNotificationService implements PaymentNotificationService {
             LOG.info("Sending {}", object);
             template.convertAndSend("payments-exchange", payment.getReference(), object);
         } catch (JsonProcessingException e) {
+            LOG.info("DET GICK EJ");
             throw new RuntimeException(e);
         }
     }
