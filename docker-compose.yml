@@ -21,4 +21,8 @@ services:
     image: rabbitmq:3.9.5
     ports:
       - "5672:5672"
-      - "15672:15672"
+      - "15692:15692"
+    environment:
+      - AMQP_URL=amqps://kikizolp:cTzep8HyiSbC6WB7aVJCsHZLheMKGyfG@bonobo.rmq.cloudamqp.com/kikizolp
+      - RABBITMQ_DEFAULT_USER=kikizolp
+      - RABBITMQ_DEFAULT_PASS=cTzep8HyiSbC6WB7aVJCsHZLheMKGyfG
