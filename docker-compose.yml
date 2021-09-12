@@ -5,7 +5,7 @@ services:
     environment:
       - CLEARDB_DATABASE_URL=eu-cdbr-west-01.cleardb.com
     ports:
-      - "3307:3307"
+      - "3306:3306"
   payment-gw:
     image: payment-gw
     environment:
