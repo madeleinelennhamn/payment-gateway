@@ -6,13 +6,13 @@ services:
       - MYSQL_ROOT_PASSWORD=password
       - MYSQL_DATABASE=payments
     ports:
-      - "3306:3306"
+      - "3307:3307"
   payment-gw:
     image: payment-gw
     environment:
       - MYSQL_HOST=mysql
       - SPRING_RABBITMQ_HOST=rabbit
-      - SPRING_RABBITMQ_PORT=5672"
+      - SPRING_RABBITMQ_PORT=5672
     ports:
       - "8080:8080"
     depends_on:
@@ -20,8 +20,7 @@ services:
   rabbit:
     image: rabbitmq:3-management
     environment:
-      - RABBITMQ_DEFAULT_USER=guest
-      - RABBITMQ_DEFAULT_PASS=guest
+      CLOUDAMQP_ONYX_URL: 'amqps://kikizolp:cTzep8HyiSbC6WB7aVJCsHZLheMKGyfG@bonobo.rmq.cloudamqp.com/kikizolp'
     ports:
       - "5672:5672"
       - "15672:15672"
