@@ -4,6 +4,9 @@ services:
     image: mysql:8.0.26
     environment:
       - CLEARDB_DATABASE_URL=eu-cdbr-west-01.cleardb.com
+      - MYSQL_PASSWORD=8f5321e7
+      - MYSQL_ROOT_PASSWORD=8f5321e7
+      - MYSQL_USER=bac32261636e98
     ports:
       - "3306:3306"
   payment-gw:
