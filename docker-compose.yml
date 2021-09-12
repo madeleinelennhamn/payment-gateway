@@ -12,13 +12,16 @@ services:
     environment:
       - MYSQL_HOST=mysql
       - SPRING_RABBITMQ_HOST=rabbit
-      - SPRING_RABBITMQ_PORT=5672
+      - SPRING_RABBITMQ_PORT=5672"
     ports:
       - "8080:8080"
     depends_on:
       - rabbit
   rabbit:
-    image: rabbitmq:3.9.5
+    image: rabbitmq:3-management
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
     ports:
       - "5672:5672"
       - "15672:15672"
