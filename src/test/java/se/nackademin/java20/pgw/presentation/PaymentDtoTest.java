@@ -7,6 +7,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/*
 class PaymentDtoTest {
 
     @Test
@@ -17,4 +18,4 @@ class PaymentDtoTest {
         assertEquals(paymentDto.getReference(), "dan");
         assertEquals(paymentDto.getAmount(), 100L);
     }
-}
+}*/
