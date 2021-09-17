@@ -42,7 +42,8 @@ public class RabbitNotificationService implements PaymentNotificationService {
 
             ResponseEntity<Payment> response = restTemplate
                     .postForEntity("https://paymentgw.herokuapp.com/payment/add{reference}/{status}", map, Payment.class);
-
+            LOG.info("STATUSCODE: ", response.getStatusCode());
+            LOG.info("BODYRESPONSE", response.getBody());
             System.out.println(response.getStatusCode());
             System.out.println(response.getBody());
 
