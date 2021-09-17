@@ -27,26 +27,24 @@ public class RabbitNotificationService implements PaymentNotificationService {
 
     @Override
     public void notifyPaid(Payment payment) {
-        try {
-            String object = objectMapper.writeValueAsString(new PaymentMessageDto(payment.getReference(), "" + payment.getId(), payment.getStatus()));
-            LOG.info("Sending {}", object);
+        //String object = objectMapper.writeValueAsString(new PaymentMessageDto(payment.getReference(), "" + payment.getId(), payment.getStatus()));
+
 //            template.convertAndSend("payments-exchange", payment.getReference(), object);
-            //kalla på url:en
+        //kalla på url:en
 
-            RestTemplate restTemplate = new RestTemplate();
+        RestTemplate restTemplate = new RestTemplate();
 
-            //serialierar
-            Map<String, Object> map = new HashMap<>();
-            map.put("reference",payment.getReference());
-            map.put("status",payment.getStatus());
+        //serialierar
+        Map<String, Object> map = new HashMap<>();
+        map.put("reference",payment.getReference());
+        map.put("status",payment.getStatus());
 
-            ResponseEntity<Payment> response = restTemplate
-                    .postForEntity("https://paymentgw.herokuapp.com/payment/add{reference}/{status}", map, Payment.class);
-            System.out.println(response.getStatusCode());
-            System.out.println(response.getBody());
+        LOG.info("Sending {}", map);
 
-        } catch (JsonProcessingException e) {
-            throw new RuntimeException(e);
-        }
+        ResponseEntity<Payment> response = restTemplate
+                .postForEntity("https://paymentgw.herokuapp.com/payment/add{reference}/{status}", map, Payment.class);
+        System.out.println(response.getStatusCode());
+        System.out.println(response.getBody());
+
     }
 }
