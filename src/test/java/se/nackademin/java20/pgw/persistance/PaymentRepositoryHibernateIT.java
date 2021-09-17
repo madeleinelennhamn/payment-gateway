@@ -20,39 +20,39 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-@ExtendWith(SpringExtension.class)
-@DataJpaTest
-@Testcontainers
-@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
-@ContextConfiguration(initializers = PaymentRepositoryHibernateIT.Lab1ApplicationTestsContextInitializer.class)
-class PaymentRepositoryHibernateIT {
-
-    @Container
-    private static final MySQLContainer db = new MySQLContainer("mysql:8.0.26").withPassword("094c8a9d");
-
-    @Autowired
-    TestEntityManager testEntityManager;
-
-    @Test
-    void shouldSaveAndFindFromTheDatabase() {
-        final PaymentRepositoryHibernate repositoryHibernate = new PaymentRepositoryHibernate(testEntityManager.getEntityManager());
-        final Payment payment = repositoryHibernate.save(new Payment("Dan", "CREATED"));
-        final Optional<Payment> actual = repositoryHibernate.findByReference(payment.getReference());
-        assertTrue(actual.isPresent());
-        assertEquals(actual.get().getReference(), payment.getReference());
-    }
-
-    public static class Lab1ApplicationTestsContextInitializer
-            implements ApplicationContextInitializer<ConfigurableApplicationContext> {
-
-        @Override
-        public void initialize(ConfigurableApplicationContext configurableApplicationContext) {
-            String host = db.getJdbcUrl();
-            TestPropertySourceUtils.addInlinedPropertiesToEnvironment(
-                    configurableApplicationContext,
-                    "spring.datasource.url=" + host, "flyway.url=" + host);
-
-        }
-    }
-}
+//
+//@ExtendWith(SpringExtension.class)
+//@DataJpaTest
+//@Testcontainers
+//@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+//@ContextConfiguration(initializers = PaymentRepositoryHibernateIT.Lab1ApplicationTestsContextInitializer.class)
+//class PaymentRepositoryHibernateIT {
+//
+//    @Container
+//    private static final MySQLContainer db = new MySQLContainer("mysql:8.0.26").withPassword("094c8a9d");
+//
+//    @Autowired
+//    TestEntityManager testEntityManager;
+//
+//    @Test
+//    void shouldSaveAndFindFromTheDatabase() {
+//        final PaymentRepositoryHibernate repositoryHibernate = new PaymentRepositoryHibernate(testEntityManager.getEntityManager());
+//        final Payment payment = repositoryHibernate.save(new Payment("Dan", "CREATED"));
+//        final Optional<Payment> actual = repositoryHibernate.findByReference(payment.getReference());
+//        assertTrue(actual.isPresent());
+//        assertEquals(actual.get().getReference(), payment.getReference());
+//    }
+//
+//    public static class Lab1ApplicationTestsContextInitializer
+//            implements ApplicationContextInitializer<ConfigurableApplicationContext> {
+//
+//        @Override
+//        public void initialize(ConfigurableApplicationContext configurableApplicationContext) {
+//            String host = db.getJdbcUrl();
+//            TestPropertySourceUtils.addInlinedPropertiesToEnvironment(
+//                    configurableApplicationContext,
+//                    "spring.datasource.url=" + host, "flyway.url=" + host);
+//
+//        }
+//    }
+//}

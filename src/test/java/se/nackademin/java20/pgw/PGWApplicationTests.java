@@ -1,4 +1,4 @@
-package se.nackademin.java20.pgw;
+/*package se.nackademin.java20.pgw;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -83,4 +83,4 @@ class PGWApplicationTests {
 
         }
     }
-}
+}*/
