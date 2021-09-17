@@ -43,7 +43,7 @@ public class RabbitNotificationService implements PaymentNotificationService {
 
         //vi vill ta bort "add"
         ResponseEntity<Payment> response = restTemplate
-                .postForEntity("jdbc:mysql://${MYSQL_HOST:eu-cdbr-west-01.cleardb.com}:3306/payments", map, Payment.class);
+                .postForEntity("/payment", map, Payment.class);
         System.out.println(response.getStatusCode());
         System.out.println(response.getBody());
 
