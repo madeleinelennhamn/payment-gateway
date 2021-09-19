@@ -43,7 +43,7 @@ public class RabbitNotificationService implements PaymentNotificationService {
 
         //vi vill ta bort "add"
         ResponseEntity<Payment> response = restTemplate
-                .postForEntity("/payment", map, Payment.class);
+                .postForEntity("https://hakimlivsdb.herokuapp.com/payment/add/reference/status", map, Payment.class);
         System.out.println(response.getStatusCode());
         System.out.println(response.getBody());
 
